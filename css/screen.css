@@ -255,6 +255,44 @@ details > ol {
   margin-bottom: 0;
 }
 
+/* Skip to content link & main landmark */
+.skip-to-content {
+  position: absolute;
+  top: -100px;
+  left: 1rem;
+  z-index: 10000;
+  background: var(--brand-color-primary, #00d3a9);
+  color: #111;
+  padding: 0.6rem 1.2rem;
+  border-radius: 4px;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  transition: top 0.2s ease-in-out;
+}
+.skip-to-content:hover {
+  color: #111;
+  text-decoration: none;
+}
+.skip-to-content:focus {
+  top: 1rem;
+  color: #111;
+  outline: 2px solid var(--color-white, #fff);
+  outline-offset: 2px;
+}
+@media (prefers-reduced-motion: reduce) {
+  .skip-to-content {
+    transition: none;
+  }
+}
+
+main#main-content {
+  display: block;
+}
+main#main-content:focus {
+  outline: none;
+}
+
 .bottom-cta {
   background: linear-gradient(to bottom, #3c494f 0%, rgb(57, 79.9, 83.5) 100%);
   color: #fff;
@@ -297,12 +335,16 @@ details > ol {
   position: relative;
   top: 1.4em;
   transform: rotate(-45deg);
-  vertical-align: center;
+  vertical-align: middle;
   width: 0.7em;
   color: #fff;
 }
 
 #button-scroll-to-up.show {
+  bottom: 20px;
+}
+
+#button-scroll-to-up:focus-visible {
   bottom: 20px;
 }
 
@@ -1832,13 +1874,22 @@ table.adapters img.adapter-logo {
 }
 
 .featured-image {
-  max-width: 750px;
+  max-width: 580px;
   width: 100%;
-  display: flex;
+  display: block;
   text-align: center;
-  margin: auto;
-  max-height: 25rem;
+  margin: 0 auto 1.5rem auto;
+  max-height: 20rem;
   object-fit: contain;
+}
+
+body.dark-mode .featured-image[src*=five-legos],
+body.dark-mode .page img[src*=five-legos],
+body.dark-mode .page img[src*=five-instructions],
+body.dark-mode .post-content img[src*=five-legos],
+body.dark-mode .post-content img[src*=five-instructions],
+body.dark-mode .dark-mode-contrast {
+  filter: drop-shadow(0 0 1.5px rgba(255, 255, 255, 0.9));
 }
 
 .blog-post .author {
@@ -3486,6 +3537,13 @@ p {
   border: 1px solid var(--brand-color-primary);
 }
 
+/* Pill shape only for the Copy URL action in copy-and-download.html.
+   The Quick Start button in _includes/models/modal.html shares
+   .import-brand-tertiary and keeps its current corners. */
+.copy-url-btn {
+  border-radius: 999px;
+}
+
 .btn-tooltip-grp {
   display: flex;
   flex-direction: row;
@@ -3496,6 +3554,67 @@ p {
   background-color: var(--action-color-dark);
 }
 
+.cstore-cta-primary,
+.cstore-cta-secondary {
+  display: inline-block;
+  padding: 10px 22px;
+  border-radius: 999px;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+/* Teal darkened to #00796b so the labels meet the 4.5:1 contrast guideline
+   in both states (5.3:1 default, 6.6:1 hover). */
+.cstore-cta-primary {
+  background: #00796b;
+  color: #fff;
+}
+
+.cstore-cta-primary:hover,
+.cstore-cta-primary:focus-visible {
+  background: #00695c;
+  color: #fff;
+  text-decoration: none;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 179, 159, 0.35);
+}
+
+.cstore-cta-secondary {
+  border: 2px solid #00796b;
+  color: #00796b;
+}
+
+.cstore-cta-secondary:hover,
+.cstore-cta-secondary:focus-visible {
+  border-color: #00695c;
+  color: #00695c;
+  text-decoration: none;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 179, 159, 0.35);
+}
+
+/* Dark mode is the default and its surface is dark, so the secondary action
+   uses the lighter brand teal there to keep 4.5:1 contrast. */
+body.dark-mode .cstore-cta-secondary {
+  border-color: var(--brand-color-primary);
+  color: var(--brand-color-primary);
+}
+
+body.dark-mode .cstore-cta-secondary:hover,
+body.dark-mode .cstore-cta-secondary:focus-visible {
+  border-color: var(--brand-color-primary);
+  color: var(--brand-color-primary);
+}
+
+/* Forced-colors mode suppresses box-shadow, so restore a visible outline
+   for keyboard focus. */
+@media (forced-colors: active) {
+  .cstore-cta-primary:focus-visible,
+  .cstore-cta-secondary:focus-visible {
+    outline: 2px solid ButtonText;
+  }
+}
 .import-brand-secondary:hover {
   background-color: var(--action-color-dark-hover);
 }

@@ -2,14 +2,6 @@
 
 > The extensible cloud native manager. Confidently wrangle cloud native infrastructure with Meshery.
 
-Meshery is now a CNCF Incubating project.
-
-[Read the announcement](https://www.cncf.io/blog/2026/10/07/meshery-becomes-a-cncf-incubating-project/)
-
- × 
-
-[&nbsp;](https://meshery.io/)
-
 # Infrastructure as design, for people and AI agents.
 
 Meshery turns your infrastructure into a shared, relationship-aware model, so every change, whether written by an engineer or suggested by an AI, is visible, validated, and reviewable before it reaches production.
@@ -1803,6 +1795,16 @@ Designs capture the desired state of your infrastructure, components and relatio
 ###### MESHERY4020
 
  ](https://meshery.io/catalog/deployment/analytics-dashboard-backend-858ebe68-4a49-4020-98c7-414ba7d2d198.html)
+
+[ 
+
+ DEPLOYMENT
+
+#### kubecon-grabnerandi-design
+
+###### MESHERY497f
+
+ ](https://meshery.io/catalog/deployment/kubecon-grabnerandi-design-85e4434e-0c4a-497f-801e-4f69d2fdc149.html)
 
 [ 
 
@@ -3868,6 +3870,16 @@ Designs capture the desired state of your infrastructure, components and relatio
 
  WORKLOADS
 
+#### kubecon-tommatime-design
+
+###### MESHERY411f
+
+ ](https://meshery.io/catalog/workloads/kubecon-tommatime-design-13edb601-381a-411f-83dd-61e44f5268d4.html)
+
+[ 
+
+ WORKLOADS
+
 #### Kubernetes Workload Controllers Overview
 
 ###### MESHERY4c19
@@ -4058,6 +4070,16 @@ Designs capture the desired state of your infrastructure, components and relatio
 
  WORKLOADS
 
+#### kubecon-shivay-design
+
+###### MESHERY47e2
+
+ ](https://meshery.io/catalog/workloads/kubecon-shivay-design-ede019cf-0457-47e2-8c81-e3e9ca3d1916.html)
+
+[ 
+
+ WORKLOADS
+
 #### Multi tenancy Virtual Cluster
 
 ###### MESHERY485b
@@ -4084,7 +4106,7 @@ Designs capture the desired state of your infrastructure, components and relatio
 
  ](https://meshery.io/catalog/workloads/zookeeper-cluster-fde9c2da-e402-4f53-b7cd-02036ac65043.html)
 
-398
+401
 
 Designs
 
